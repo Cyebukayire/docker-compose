@@ -8,6 +8,8 @@ services:
       - "8080:8080"
     volumes:
       - ./:/usr/src/app/
+    container_name: docker-compose-employees
+    image: cyebukayire/docker-compose:latest
 
   postgres:
     image: postgres:14.1-alpine
@@ -19,3 +21,4 @@ services:
       - "5432:5432"
     volumes:
       - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
+    container_name: postgres
